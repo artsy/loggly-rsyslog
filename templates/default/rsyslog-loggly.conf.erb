@@ -5,8 +5,8 @@ $ModLoad imfile
 
 	<% node['loggly']['log_files'].each do |logfile| %>
 $InputFileName <%= logfile['filename'] %>
-$InputFileTag <%= logfile['tag'] %>
-$InputFileStateFile <%= logfile['statefile'] %>
+$InputFileTag <%= logfile['tag'] %>:
+$InputFileStateFile loggly-<%= logfile['tag'] %>
 $InputRunFileMonitor
 	<% end %>
 
